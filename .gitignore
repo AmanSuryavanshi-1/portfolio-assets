@@ -1,0 +1,10 @@
+# Ignore video files (too large for GitHub, using YouTube instead)
+*.mp4
+*.webm
+*.mov
+*.avi
+*.mkv
+
+# System files
+.DS_Store
+Thumbs.db
