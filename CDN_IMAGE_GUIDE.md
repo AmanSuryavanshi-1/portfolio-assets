@@ -54,27 +54,92 @@ When modifying an existing asset without changing the filename:
 
 ## Cache Management & Troubleshooting
 
-jsDelivr implements aggressive caching policies for performance. Updates to existing filenames may not reflect immediately.
+> [!IMPORTANT]
+> There are **TWO separate caching layers** when using CDN images in GitHub documentation. Both must be addressed for updates to appear.
 
-### Strategy 1: Cache Purging (Recommended)
+### TL;DR — When Do I Need Cache-Busting?
 
-Manually trigger a cache invalidation for a specific resource via the jsDelivr Purge API.
+| Where Image Is Viewed | After Purging jsDelivr | Action Needed |
+|-----------------------|------------------------|---------------|
+| **Your Website** (via GitHub API) | ✅ Updates automatically | Just purge jsDelivr |
+| **Any external site** | ✅ Updates automatically | Just purge jsDelivr |
+| **GitHub.com** (README/docs) | ❌ Still cached by Camo | Add `?v=2` to URL |
 
-1.  **Construct Purge Request:**
-    `https://purge.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/{PATH_TO_FILE}`
-2.  **Execution:** Send a GET request (browse to URL) to the constructed endpoint.
-3.  **Verification:** A JSON response `{"status": "finished"}` confirms the purge.
+> [!TIP]
+> **Only GitHub documentation requires the `?v=X` version bump.** Your portfolio website and all other consumers will see updated images immediately after jsDelivr purge.
 
-### Strategy 2: Versioning / Cache Busting
+### Understanding the Caching Layers
 
-Force immediate retrieval by appending a unique query parameter to the asset URL in the codebase.
+| Layer | URL Pattern | Cache Owner |
+|-------|-------------|-------------|
+| **Layer 1** | `cdn.jsdelivr.net/...` | jsDelivr CDN |
+| **Layer 2** | `camo.githubusercontent.com/...` | GitHub Camo Proxy |
+
+**Why this matters:** GitHub proxies ALL external images through its Camo service for security. Even after jsDelivr cache is purged, GitHub's Camo may still serve the old cached version.
+
+---
+
+### Step 1: Purge jsDelivr CDN Cache
+
+1. **Construct the purge URL:**
+   ```
+   https://purge.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/{PATH_TO_FILE}
+   ```
+   
+2. **Execute:** Open the URL in browser (GET request).
+
+3. **Verify:** Response should show `{"status": "finished"}`.
+
+**Example:**
+```
+https://purge.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/v5_canvas_overview.webp
+```
+
+---
+
+### Step 2: Bust GitHub Camo Cache
+
+> [!WARNING]
+> GitHub Camo has its own cache independent of jsDelivr. A simple commit to documentation will NOT refresh it.
+
+**Solution: Add a version query parameter to the image URL**
+
+In the documentation file where you reference the image:
 
 ```diff
-- imageUrl: "https://.../asset.webp"
-+ imageUrl: "https://.../asset.webp?v=2"
+- ![Image](https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/image.webp)
++ ![Image](https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/image.webp?v=2)
 ```
+
+**Rules:**
+- Increment `?v=2` → `?v=3` → `?v=4` each time you update the same image
+- This forces GitHub to treat it as a completely new URL
+- Commit and push the documentation change
+
+---
+
+### Quick Reference: Complete Update Workflow
+
+When updating an existing image:
+
+```bash
+# 1. Replace the image file locally and push
+git add path/to/image.webp
+git commit -m "Update image"
+git push origin main
+
+# 2. Purge jsDelivr cache (open in browser)
+# https://purge.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/path/to/image.webp
+
+# 3. Update image URL in documentation with version bump
+# Change: image.webp → image.webp?v=2
+# Commit and push the documentation
+```
+
+---
 
 ## Best Practices
 
-*   **File Naming:** Use kebab-case or snake_case (e.g., `project-dashboard.webp`). Avoid spaces to prevent URL encoding issues.
-*   **Optimization:** Convert PNG/JPG to WebP format to reduce payload size and improve Core Web Vitals.
+*   **File Naming:** Use kebab-case or snake_case (e.g., `project-dashboard.webp`). Avoid spaces.
+*   **Optimization:** Convert PNG/JPG to WebP for smaller payloads and better Core Web Vitals.
+*   **Version Tracking:** Maintain a comment in documentation noting current cache-bust version if frequently updated.
