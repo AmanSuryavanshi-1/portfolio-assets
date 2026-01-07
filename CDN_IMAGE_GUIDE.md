@@ -78,17 +78,3 @@ Force immediate retrieval by appending a unique query parameter to the asset URL
 
 *   **File Naming:** Use kebab-case or snake_case (e.g., `project-dashboard.webp`). Avoid spaces to prevent URL encoding issues.
 *   **Optimization:** Convert PNG/JPG to WebP format to reduce payload size and improve Core Web Vitals.
-
-## N8N-GithubBackup Asset Links
-
-| File Name | CDN Link |
-| :--- | :--- |
-| commit_efficiency_comparison.png | `https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/commit_efficiency_comparison.png` |
-| self_healing_logic_diagram.png | `https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/self_healing_logic_diagram.png` |
-| split_tag_organization_flow.png | `https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/split_tag_organization_flow.png` |
-| v5_canvas_overview.png | `https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/v5_canvas_overview.png` |
-| v5_dual_stream_architecture.png | `https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/v5_dual_stream_architecture.png` |
-| v5_real_repo_structure.png | `https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/v5_real_repo_structure.png` |
-| v5_recursive_scrubbing_flow.png | `https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/v5_recursive_scrubbing_flow.png` |
-| v5_smart_search_logic_flow.png | `https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/v5_smart_search_logic_flow.png` |
-| zero_trust_security_scrubbing.png | `https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/zero_trust_security_scrubbing.png` |

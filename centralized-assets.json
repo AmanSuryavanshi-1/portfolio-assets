@@ -434,5 +434,70 @@
       "cdnUrl": "https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/AV-NewsStream/AV-NewsStream-mobile.webp",
       "cloudinaryUrl": "https://res.cloudinary.com/dr0lrme36/image/upload/f_auto/q_auto/c_limit,w_1600/v1/AV-NewsStream/AV-NewsStream-mobile"
     }
+  ],
+  "N8N-GithubBackup": [
+    {
+      "id": "commit_efficiency_comparison",
+      "filename": "commit_efficiency_comparison.webp",
+      "type": "image",
+      "localPath": "/Project/N8N-GithubBackup/commit_efficiency_comparison.webp",
+      "cdnUrl": "https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/commit_efficiency_comparison.webp"
+    },
+    {
+      "id": "self_healing_logic_diagram",
+      "filename": "self_healing_logic_diagram.webp",
+      "type": "image",
+      "localPath": "/Project/N8N-GithubBackup/self_healing_logic_diagram.webp",
+      "cdnUrl": "https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/self_healing_logic_diagram.webp"
+    },
+    {
+      "id": "split_tag_organization_flow",
+      "filename": "split_tag_organization_flow.webp",
+      "type": "image",
+      "localPath": "/Project/N8N-GithubBackup/split_tag_organization_flow.webp",
+      "cdnUrl": "https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/split_tag_organization_flow.webp"
+    },
+    {
+      "id": "v5_canvas_overview",
+      "filename": "v5_canvas_overview.webp",
+      "type": "image",
+      "localPath": "/Project/N8N-GithubBackup/v5_canvas_overview.webp",
+      "cdnUrl": "https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/v5_canvas_overview.webp"
+    },
+    {
+      "id": "v5_dual_stream_architecture",
+      "filename": "v5_dual_stream_architecture.webp",
+      "type": "image",
+      "localPath": "/Project/N8N-GithubBackup/v5_dual_stream_architecture.webp",
+      "cdnUrl": "https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/v5_dual_stream_architecture.webp"
+    },
+    {
+      "id": "v5_real_repo_structure",
+      "filename": "v5_real_repo_structure.webp",
+      "type": "image",
+      "localPath": "/Project/N8N-GithubBackup/v5_real_repo_structure.webp",
+      "cdnUrl": "https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/v5_real_repo_structure.webp"
+    },
+    {
+      "id": "v5_recursive_scrubbing_flow",
+      "filename": "v5_recursive_scrubbing_flow.webp",
+      "type": "image",
+      "localPath": "/Project/N8N-GithubBackup/v5_recursive_scrubbing_flow.webp",
+      "cdnUrl": "https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/v5_recursive_scrubbing_flow.webp"
+    },
+    {
+      "id": "v5_smart_search_logic_flow",
+      "filename": "v5_smart_search_logic_flow.webp",
+      "type": "image",
+      "localPath": "/Project/N8N-GithubBackup/v5_smart_search_logic_flow.webp",
+      "cdnUrl": "https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/v5_smart_search_logic_flow.webp"
+    },
+    {
+      "id": "zero_trust_security_scrubbing",
+      "filename": "zero_trust_security_scrubbing.webp",
+      "type": "image",
+      "localPath": "/Project/N8N-GithubBackup/zero_trust_security_scrubbing.webp",
+      "cdnUrl": "https://cdn.jsdelivr.net/gh/AmanSuryavanshi-1/portfolio-assets@main/N8N-GithubBackup/zero_trust_security_scrubbing.webp"
+    }
   ]
 }
